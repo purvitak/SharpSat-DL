@@ -1,0 +1,17 @@
+# SharpSat: web model registry
+#
+# Only the `models` section is read (by src/model_registry.py). Checkpoints are
+# trained from the repo root (see the root README) and copied into
+# web/checkpoints/. The architecture is read from each checkpoint, so
+# num_blocks here is only a fallback.
+models:
+  attn_sen2naip:
+    label: "Attention-RRDB (accuracy)"
+    description: "Trained on real Sentinel-2 -> 2.5 m NAIP pairs (SEN2NAIP). Best PSNR/SSIM/SAM/ERGAS. Use for NDVI and other quantitative products."
+    checkpoint: "checkpoints/best_model_attn_sen2naip.pt"
+    num_blocks: 8
+  attn_gan_sen2naip:
+    label: "Attention-RRDB + GAN (visual)"
+    description: "GAN-refined version: sharpest, most realistic-looking output (lowest LPIPS). Band ratios are less trustworthy than the accuracy model."
+    checkpoint: "checkpoints/best_model_attn_gan_sen2naip.pt"
+    num_blocks: 8

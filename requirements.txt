@@ -1,0 +1,22 @@
+# Full requirements: training + evaluation + web demo.
+# The demo alone only needs web/requirements.txt.
+#
+# For an NVIDIA GPU, install the CUDA build of PyTorch first, e.g.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# (see https://pytorch.org/get-started/locally/), then install this file.
+torch>=2.2.0
+torchvision>=0.17.0
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-image>=0.20.0
+matplotlib>=3.7.0
+tqdm>=4.66.0
+pyyaml>=6.0
+pillow>=9.5.0
+rasterio>=1.3.0       # reads the SEN2NAIP GeoTIFFs (src/data/sen2naip.py)
+lpips>=0.1.4          # LPIPS metric (src/eval/perceptual_metrics.py)
+
+# web demo
+fastapi>=0.100.0
+uvicorn>=0.22.0
+python-multipart>=0.0.6

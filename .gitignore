@@ -1,0 +1,16 @@
+# Leading slash anchors these to the repo root. Unanchored "data/" also
+# matched src/data/ and web/src/data/, so the dataset code was never committed.
+/configs/config.yaml
+/data/
+/web/data/
+checkpoints/
+*.npy
+*.pt
+__pycache__/
+*.zip
+.DS_Store
+.venv/
+
+# kept local: paper (link added once published) and raw training logs
+/paper/
+/TrainingLogs/
